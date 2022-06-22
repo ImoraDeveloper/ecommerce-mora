@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-item {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.container-input {
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
