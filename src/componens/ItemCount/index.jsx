@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-const ItemCount = ({ handledAdd, initialStock }) => {
-  const [count, setCount] = useState(0);
+const ItemCount = ({ handledAdd, totalStock }) => {
+  const [count, setCount] = useState(1);
 
   const onAdd = () => {
-    setCount(Math.min(count + 1, initialStock));
+    setCount(Math.min(count + 1, totalStock));
   };
 
   const onDecrement = () => {
-    setCount(Math.max(count - 1, 0));
+    setCount(Math.max(count - 1, 1));
   };
 
   return (
@@ -19,7 +19,7 @@ const ItemCount = ({ handledAdd, initialStock }) => {
       </div>
       <button onClick={onAdd}>+</button>
       <button onClick={onDecrement}>-</button>
-      <button onClick={handledAdd}>agregar al carrito</button>
+      <button onClick={() => handledAdd(count)}>agregar al carrito</button>
     </div>
   );
 };
