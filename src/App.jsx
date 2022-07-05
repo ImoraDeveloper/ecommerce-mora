@@ -1,6 +1,7 @@
 import "./App.css";
 import Input from "./componens/Input";
 import NavBar from "./componens/NavBar/index";
+import ItemDetailContainer from "./containers/ItemDetailContainer";
 import ItemListContainer from "./containers/ItemListContainer";
 
 function App() {
@@ -13,11 +14,12 @@ function App() {
         <Input />
       </div>
       <div className="container-item">
-        <ItemListContainer greeting="Hola pueblo">
+        {/* <ItemListContainer greeting="Hola pueblo">
           <h1>Probando los children</h1>
           <h2>probando si funciona con todo</h2>
           <h3>parece que si</h3>
-        </ItemListContainer>
+        </ItemListContainer> */}
+        <ItemDetailContainer />
       </div>
     </div>
   );
