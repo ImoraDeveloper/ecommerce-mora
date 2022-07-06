@@ -3,25 +3,34 @@ import Input from "./componens/Input";
 import NavBar from "./componens/NavBar/index";
 import ItemDetailContainer from "./containers/ItemDetailContainer";
 import ItemListContainer from "./containers/ItemListContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./componens/NotFound";
 
 function App() {
   return (
-    <div className="container">
-      <div className="container-nav">
-        <NavBar />
+    <BrowserRouter>
+      <div className="container">
+        <div className="container-nav">
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<ItemListContainer />}></Route>
+            <Route
+              path="/category/:categoryId"
+              element={<ItemListContainer />}
+            ></Route>
+            <Route
+              path="/detail/:productId"
+              element={<ItemDetailContainer />}
+            ></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
+        </div>
+        <div className="container-input">
+          <Input />
+        </div>
+        <div className="container-item"></div>
       </div>
-      <div className="container-input">
-        <Input />
-      </div>
-      <div className="container-item">
-        {/* <ItemListContainer greeting="Hola pueblo">
-          <h1>Probando los children</h1>
-          <h2>probando si funciona con todo</h2>
-          <h3>parece que si</h3>
-        </ItemListContainer> */}
-        <ItemDetailContainer />
-      </div>
-    </div>
+    </BrowserRouter>
   );
 }
 

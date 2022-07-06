@@ -1,0 +1,10 @@
+.card-count {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  margin-right: 1px;
+}
+
+button {
+  margin: 2px;
+}
