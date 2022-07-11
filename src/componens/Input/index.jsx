@@ -3,7 +3,7 @@ import React from "react";
 const Input = () => {
   return (
     <div>
-      <input placeholder="Esribe qui" className="app-input" />
+      <input placeholder="Deja un comentario aqui" className="app-input" />
     </div>
   );
 };

@@ -4,10 +4,12 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 // import ItemCount from "../../componens/ItemCount";
 import ItemList from "../../componens/ItemList";
+import ModalConEscape from "../../componens/ModalConEscape";
 
 const ItemListContainer = ({ greeting, children }) => {
   const [productos, setProductos] = useState([]);
   const [productosFiltrados, setProductosFiltrados] = useState([]);
+  const [modalVisible, setModalVisible] = useState(true);
 
   const params = useParams();
   console.log(params);
@@ -73,6 +75,11 @@ const ItemListContainer = ({ greeting, children }) => {
         {children}
         <p>{greeting}</p>
         {productos ? <ItemList products={productosFiltrados} /> : null}
+        <div>
+          {true
+            ? modalVisible && <ModalConEscape handleClose={setModalVisible} />
+            : []}
+        </div>
       </div>
       <div> {/* <ItemCount handledAdd={handledAdd} totalStock={5} /> */}</div>
     </div>
