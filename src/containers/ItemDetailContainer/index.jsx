@@ -7,6 +7,7 @@ const ItemDetailContainer = () => {
   const [productDetail, setProductDetail] = useState({});
   const params = useParams();
   console.log(params);
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState("");
 
   useEffect(() => {

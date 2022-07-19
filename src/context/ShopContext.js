@@ -7,6 +7,8 @@ const ShopProvider = ({ children }) => {
 
   const [cart, setCart] = useState([]);
 
+  const [suma, setSuma] = useState([]);
+
   //Agregar un item al carrito, acorde a la cantidad
   const addItem = (producto, cantidad) => {
     console.log(producto, cantidad);
@@ -20,7 +22,12 @@ const ShopProvider = ({ children }) => {
       setCart([...cart, { ...producto, quantity: cantidad }]);
     }
   };
-
+  const sumando = (id) => {
+    const productosSumados = cart.filter(
+      (producto) => producto.quantity * producto.price
+    );
+    setSuma(productosSumados);
+  };
   const removeItem = (id) => {
     const productosFiltrados = cart.filter((producto) => producto.id !== id);
     setCart(productosFiltrados);
@@ -31,7 +38,18 @@ const ShopProvider = ({ children }) => {
   };
 
   return (
-    <Shop.Provider value={{ estadoA, setEstadoA, addItem, removeItem, cart }}>
+    <Shop.Provider
+      value={{
+        estadoA,
+        setEstadoA,
+        addItem,
+        removeItem,
+        suma,
+        setSuma,
+        sumando,
+        cart,
+      }}
+    >
       {children}
     </Shop.Provider>
   );
