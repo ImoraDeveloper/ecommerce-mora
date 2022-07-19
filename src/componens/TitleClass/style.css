@@ -1,0 +1,9 @@
+.importante {
+  font-size: 32;
+  color: red;
+}
+
+.no-importante {
+  font-size: 20;
+  color: green;
+}

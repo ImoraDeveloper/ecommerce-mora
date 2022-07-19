@@ -7,6 +7,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./componens/NotFound";
 import Cart from "../src/containers/Cart/index";
 import ShopProvider from "./context/ShopContext";
+import CounterContainer from "./CounterContainer";
+// import LoadingComponent from "./componens/LoadingComponent";
+// import ReturnTemprano from "./componens/ReturnTemprano";
+// import BinaryOperator from "./componens/BinaryOperator";
+// import Title from "./componens/Title";
+// import TitleClass from "./componens/TitleClass";
+// import TitleStyleOpcionales from "./componens/TitleStyleOpcionales";
 
 function App() {
   return (
@@ -35,6 +42,16 @@ function App() {
           <div className="container-item"></div>
         </div>
       </BrowserRouter>
+      <CounterContainer />
+      {/* <LoadingComponent />
+      <ReturnTemprano condition={false} /> */}
+      {/* <BinaryOperator condition={true} />
+      <Title type="importante" title={"no hay stock"} />
+      <TitleClass type="importantes" title="el verde no es importante" />
+      <TitleStyleOpcionales
+        title="coderhouse"
+        style={{ fontSize: 24, fontStyle: "italic"  }}
+      /> */}
     </ShopProvider>
   );
 }

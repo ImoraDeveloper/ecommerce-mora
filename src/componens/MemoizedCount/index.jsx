@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ButtonCount = ({ onConfirm, maxQuantity, id }) => {
+const MemoizedCount = ({ onConfirm, maxQuantity, id }) => {
   const [value, setValue] = useState(1);
 
   console.log("Se vuelve a renderizar el count ", id);
@@ -27,4 +27,4 @@ const ButtonCount = ({ onConfirm, maxQuantity, id }) => {
   );
 };
 
-export default ButtonCount;
+export default React.memo(MemoizedCount);

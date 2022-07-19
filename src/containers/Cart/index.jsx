@@ -10,7 +10,7 @@ const Cart = () => {
       {cart.map((producto) => {
         return (
           <li key={producto.id}>
-            {producto.title}{" "}
+            {producto.title}
             <img src={producto.image} width="80px" alt={producto.title} />
           </li>
         );

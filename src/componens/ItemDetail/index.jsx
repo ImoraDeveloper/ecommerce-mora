@@ -5,7 +5,7 @@ import { Shop } from "../../context/ShopContext";
 import ButtonCount from "../ButtonCount";
 
 const ItemDetail = ({ product }) => {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   product.stock = 10;
   const [qtyAdded, setQtyAdded] = useState(0);
 
@@ -16,8 +16,11 @@ const ItemDetail = ({ product }) => {
   };
   const handleTerminate = () => {
     addItem(product, qtyAdded);
-    <link></link>;
     navigate("/Cart");
+  };
+
+  const handleHome = () => {
+    navigate("../../App.jsx");
   };
   console.log(product);
   console.log(qtyAdded);
@@ -31,6 +34,7 @@ const ItemDetail = ({ product }) => {
       ) : (
         <button onClick={handleTerminate}>Terminar compra</button>
       )}
+      <button onClick={handleHome}>Seguir comprando</button>
     </div>
   );
 };
