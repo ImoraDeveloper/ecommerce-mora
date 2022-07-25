@@ -20,7 +20,7 @@ const ItemDetail = ({ product }) => {
   };
 
   const handleHome = () => {
-    navigate("../../App.jsx");
+    navigate("/");
   };
   console.log(product);
   console.log(qtyAdded);
