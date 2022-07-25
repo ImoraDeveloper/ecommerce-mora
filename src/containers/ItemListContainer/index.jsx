@@ -7,6 +7,7 @@ import ItemList from "../../componens/ItemList";
 import ModalConEscape from "../../componens/ModalConEscape";
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/config";
+// import algoritmoGuardadoAutomático from "../utils/guardarProdctos";
 
 const ItemListContainer = ({ greeting, children }) => {
   const [productos, setProductos] = useState([]);
@@ -19,6 +20,13 @@ const ItemListContainer = ({ greeting, children }) => {
   useEffect(() => {
     const getProductos = async () => {
       try {
+        // //esto sirve para copiar el json al firebase
+        // //se utiliza la funcion guardar productos
+        // algoritmoGuardadoAutomático();
+
+        //lo que esta encerado aqui es la forma de traer de firebase
+
+        //
         const q = query(collection(db, "products"));
 
         const querySnapshot = await getDocs(q);
@@ -32,6 +40,10 @@ const ItemListContainer = ({ greeting, children }) => {
         console.log(productos);
         setProductos(productos);
         setProductosFiltrados(productos);
+        //
+        //hasta aqui es lo de firebase
+
+        //
         // se comenta fech ya que estamos usando firebase
         // const response = await fetch("https://fakestoreapi.com/products/");
         // const data = await response.json();

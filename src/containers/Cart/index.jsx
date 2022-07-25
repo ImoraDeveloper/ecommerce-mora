@@ -1,10 +1,21 @@
+import { addDoc, collection } from "firebase/firestore";
 import React, { useContext } from "react";
 import { Shop } from "../../context/ShopContext";
+import { db } from "../../firebase/config";
+import ordenGenerada from "../utils/generarOrden";
 
 const Cart = () => {
   const { cart } = useContext(Shop);
-  const suma = cart;
-  console.log(suma);
+
+  const confirmarOrden = async () => {
+    const orden = ordenGenerada("Sebas", "Calle falsa 123", cart, 1200);
+    console.log(orden);
+    // guardarOrden(cart, orden);
+
+    // Add a new document with a generated id.
+    const docRef = await addDoc(collection(db, "orders"), orden);
+    console.log("Document written with ID: ", docRef.id);
+  };
 
   return (
     <ul>
@@ -29,6 +40,9 @@ const Cart = () => {
                 <p>total $ {producto.price * producto.quantity}</p>
               </div>
             </li>
+            <div>
+              <button onClick={confirmarOrden}>Confirmar compra</button>
+            </div>
           </div>
         );
       })}

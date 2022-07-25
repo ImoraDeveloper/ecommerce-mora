@@ -22,6 +22,7 @@ const ShopProvider = ({ children }) => {
       setCart([...cart, { ...producto, quantity: cantidad }]);
     }
   };
+
   const sumando = (id) => {
     const productosSumados = cart.filter(
       (producto) => producto.quantity * producto.price

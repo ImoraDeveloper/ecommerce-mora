@@ -13,6 +13,9 @@ const InputCount = ({ onConfirm, maxQuantity }) => {
 
   return (
     <div>
+      <button onClick={() => setValue((value) => value + 1)}>+</button>
+      <span>{value}</span>
+      <button onClick={() => setValue((value) => value - 1)}>-</button>
       <input value={value} onChange={(e) => setValue(e.target.value)} />
       <button onClick={handleConfirm}>Confirm</button>
     </div>
