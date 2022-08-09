@@ -35,8 +35,8 @@ const CounterContainer = () => {
           />
         );
       })}
-      <button onClick={() => setState(!state)}>Change state</button>
-      <h2>El estado está en!: {state.toString()}</h2>
+      {/* <button onClick={() => setState(!state)}>Change state</button>
+      <h2>El estado está en!: {state.toString()}</h2> */}
     </>
   );
 };

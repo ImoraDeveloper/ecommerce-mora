@@ -20,11 +20,11 @@ const ItemListContainer = ({ greeting, children }) => {
   useEffect(() => {
     const getProductos = async () => {
       try {
-        // //esto sirve para copiar el json al firebase
-        // //se utiliza la funcion guardar productos
+        //esto sirve para copiar el json al firebase
+        //se utiliza la funcion guardar productos
         // algoritmoGuardadoAutomático();
 
-        //lo que esta encerado aqui es la forma de traer de firebase
+        // lo que esta encerado aqui es la forma de traer de firebase
 
         //
         const q = query(collection(db, "products"));
@@ -104,9 +104,11 @@ const ItemListContainer = ({ greeting, children }) => {
         <p>{greeting}</p>
         {productos ? <ItemList products={productosFiltrados} /> : null}
         <div>
-          {true
-            ? modalVisible && <ModalConEscape handleClose={setModalVisible} />
-            : []}
+          {true ? (
+            modalVisible && <ModalConEscape handleClose={setModalVisible} />
+          ) : (
+            <p>...Loading</p>
+          )}
         </div>
       </div>
       <div> {/* <ItemCount handledAdd={handledAdd} totalStock={5} /> */}</div>

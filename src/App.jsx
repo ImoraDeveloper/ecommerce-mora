@@ -36,13 +36,9 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
-          <div className="container-input">
-            <Input />
-          </div>
-          <div className="container-item"></div>
         </div>
       </BrowserRouter>
-      <CounterContainer />
+      {/* <CounterContainer /> */}
       {/* <LoadingComponent />
       <ReturnTemprano condition={false} /> */}
       {/* <BinaryOperator condition={true} />

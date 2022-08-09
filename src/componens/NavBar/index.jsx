@@ -18,17 +18,14 @@ const NavBar = () => {
           <Link to="/">Home</Link>
         </li>
         <li className="items">
-          <Link to="/category/electronics">Electronics</Link>
+          <Link to="/category/almacenamiento">Almacenamiento</Link>
         </li>
 
         <li className="items">
-          <Link to="/category/servicios">Servicios</Link>
+          <Link to="/category/pantallas">Pantallas</Link>
         </li>
         <li className="items">
           <Link to="/category/contacto">Contacto</Link>
-        </li>
-        <li className="items">
-          <a href="/#">{estadoA}</a>
         </li>
       </ul>
     </nav>

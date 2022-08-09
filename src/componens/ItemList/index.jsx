@@ -15,7 +15,6 @@ const ItemList = ({ products }) => {
       {products.map((producto) => {
         return <Item product={producto} key={producto.id} />;
       })}
-      <button onClick={handleChanceState}>Cambio a etado A</button>
     </ul>
   );
 };
